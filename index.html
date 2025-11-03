@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Cities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Shortest Path Finder 🏙️</h1>
+    <form method="POST">
+        <label>From City:</label>
+        <select name="from_city" required>
+            <option value="">Select City</option>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+
+        <label>To City:</label>
+        <select name="to_city" required>
+            <option value="">Select City</option>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Find Shortest Path</button>
+    </form>
+</div>
+</body>
+</html>
