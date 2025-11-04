@@ -12,12 +12,6 @@
     <p><strong>To:</strong> {{ to_city }}</p>
     <p><strong>Shortest Distance:</strong> {{ result }}</p>
 
-    <div class="graph-container">
-        <h3>Graph:</h3>
-        <!-- ✅ Added cache-busting timestamp to force reload if Flask reuses old image -->
-        <img src="{{ url_for('static', filename='graph.png') }}?v={{ range(1, 10000) | random }}" alt="Graph">
-    </div>
-
     <a href="{{ url_for('index') }}" class="back-button">← Back</a>
 </div>
 </body>
